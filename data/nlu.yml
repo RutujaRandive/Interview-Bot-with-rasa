@@ -1,0 +1,185 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: tell_name
+  examples: |
+    - what is your name?
+    - tell me your name
+    - what others call you
+    - what should i call you?
+
+- intent: start_interview
+  examples: |
+    - start
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: my_name
+  examples: |
+    - my name is [ashish]{"entity":"name","value":"ashish"}
+    - my name is [rahul]{"entity":"name","value":"rahul"}
+    - my name is [apneet]{"entity":"name","value":"apneet"}
+    - [ashish]{"entity":"name","value":"ashish"} is my name
+    - [ashish]{"entity":"name","value":"ashish"} this side
+    - people call me [ashish]{"entity":"name","value":"ashish"}
+    - my name is [rutuja]{"entity":"name","value":"rutuja"}
+    - my name is [jeslyn]{"entity":"name","value":"jeslyn"}
+    - my name is [sanjo]{"entity":"name","value":"sanjo"}
+    - my name is [saurabh]{"entity":"name","value":"saurabh"}
+    - my name is [nupur]{"entity":"name","value":"nupur"}
+    - my name is [rasika]{"entity":"name","value":"rasika"}
+    - my name is [uday]{"entity":"name","value":"uday"}
+    - my name is [raj]{"entity":"name","value":"raj"}
+    - my name is [bhushan]{"entity":"name","value":"bhushan"}
+    - my name is [neelam]{"entity":"name","value":"neelam"}
+    - my name is [sakshi]{"entity":"name","value":"sakshi"}
+    - my name is [gauri]{"entity":"name","value":"gauri"}
+    - [Sanjo]{"entity":"name","value":"Sanjo"}
+
+
+- intent: my_lname
+  examples: |
+    - [Randive]{"entity":"lname"}
+    - [Jaison]{"entity":"lname"}
+    - [Sunny]{"entity":"lname"}
+
+- intent: mobile_number
+  examples: |
+    - my number is [8209829808]{"entity":"number"}
+    - [8209829808]{"entity":"number"}
+    - [8209829808]{"entity":"number"} is my number
+    - my mobile number is [8209829808]{"entity":"number"}
+
+- intent: my_branch
+  examples: |
+    - my branch is [IT]{"entity":"branch","value":"IT"}
+    - my branch is [EXTC]{"entity":"branch","value":"EXTC"}
+    - my branch is [CS]{"entity":"branch","value":"CS"}
+
+- intent: my_email
+  examples: |
+    - my email is [randiverutuja@gmail.com]{"entity":"email"}
+    - [randiverutuja@gmail.com]{"entity":"email"}
+    - [randiverutuja@gmail.com]{"entity":"email"} is my email
+    - my email is [randiverutuja@gmail.com]{"entity":"email"}
+
+- intent: my_cgpa
+  examples: |
+    - my cgpa is [9.54]{"entity":"cgpa"}
+    - [8.7]{"entity":"cgpa"}
+    - [9.85]{"entity":"cgpa"} is my number
+    - my cgpa is [7.3]{"entity":"cgpa"}
+
+- intent: coding_lang
+  examples: |
+    - [C]{"entity":"lang"}
+    - [java]{"entity":"lang"}
+    - [python]{"entity":"lang"}
+
+- intent: start_interview
+  examples: |
+    - [data]{"entity":"question"}
+    - [One]{"entity":"question"}
+    - [First]{"entity":"question"}
+    - [Seven]{"entity":"question"}
+    - [Sixteen]{"entity":"question"}
+
+- intent: play_video
+  examples: |
+    - play the mentioned video
+    - open the url
+    - open the link in browser
+    - show me the video that i asked for
+
+- intent: out_of_scope
+  examples: |
+    - I want to order food
+    - What is 2 + 2?
+    - Who's the US President?
