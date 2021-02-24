@@ -1,0 +1,158 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - tell_name
+  - play_video
+  - out_of_scope
+  - start_interview:
+      use_entities:
+        - question
+  - my_name:
+      use_entities:
+        - name
+  - my_lname:
+      use_entities:
+        - lname
+  - mobile_number:
+      use_entities:
+        - number
+  - my_branch:
+      use_entities:
+        - branch
+  - my_email:
+      use_entities:
+        - email
+  - my_cgpa:
+      use_entities:
+        - cgpa
+  - coding_lang:
+      use_entities:
+        - lang
+
+entities:
+  - name
+  - lname
+  - number
+  - branch
+  - email
+  - cgpa
+  - lang
+  - question
+
+slots:
+  name:
+    type: text
+  lname:
+    type: text
+  number:
+    type: text
+  branch:
+    type: text
+  email:
+    type: text
+  cgpa:
+    type: text
+  lang:
+    type: text
+  question:
+    type: text
+  cid:
+    type: text
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_name:
+  - text: My name is Recruitment Bot.
+
+  utter_ask_name:
+  - text: Enter your First Name.
+
+  utter_ask_lname:
+  - text: Enter your Last Name.
+
+  utter_ask_number:
+  - text: Enter your Contact Number.
+
+  utter_ask_branch:
+  - text: Enter your Branch as follows [CS(Computer Science), IT(Information Technology), EXTC(Electronics and Telecommunication), MECH(Mechanical)]
+
+  utter_ask_cgpa:
+  - text: Enter your CGPA.
+
+  utter_ask_email:
+  - text: Enter your email address.
+
+  utter_ask_lang:
+  - text: Which coding language do you prefer from C, Python, Java?
+
+  utter_thanks:
+    - text: Thanks for providing the values.
+
+  utter_details_thanks:
+   - text: "Thanks for providing the given details \nFirst Name: {FName},\nLast Name: {LName},\nBranch: {Branch},\nCGPA: {CGPA},\nEmail: {Email},\nCoding Language: {lang},\nMobile Number: {Mobile_number},\nCandidate Id: {Candidate_id}"
+
+  utter_ask_question:
+    - text: "{qu}"
+
+  utter_out_of_scope:
+    - text: Sorry I did not get what you said. Please rephrase what you said.
+actions:
+  - action_submit
+  # - initialize_question
+  - first_question
+  - action_video
+  - get_cand_id
+  - get_sim
+
+forms:
+  user_details_form:
+    name:
+      - type: from_entity
+        entity: name
+    lname:
+      - type: from_entity
+        entity: lname
+    number:
+      - type: from_entity
+        entity: number
+    branch:
+      - type: from_entity
+        entity: branch
+    cgpa:
+      - type: from_entity
+        entity: cgpa
+    email:
+      - type: from_entity
+        entity: email
+    lang:
+      - type: from_entity
+        entity: lang
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
