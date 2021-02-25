@@ -88,7 +88,6 @@ class question(Action):
         domain: "DomainDict",
     ) -> List[Dict[Text, Any]]:
 
-        # print(tracker.get_slot("cid"))
         q = RetrieveQuestion(tracker.get_slot("cid"))
 
         if len(q)==2 and q[1]=='stop':
@@ -99,12 +98,8 @@ class question(Action):
             dispatcher.utter_message(template="utter_ask_question",
                                     qu=q[1])
 
-            # sim= random.uniform(0.0,1.1)
-            # sim = Similarity(tracker.latest_message['text'])
+            QuestionHistory(tracker.get_slot("cid"),q[0],q[3],q[4],0.5)
 
-            QuestionHistory(tracker.get_slot("cid"),q[0],q[3],0.5)
-
-        # Similarity(tracker.latest_message['text'])
         return [SlotSet("question", tracker.latest_message['text'])]
 
 class Candidate_id(Action):
@@ -113,6 +108,6 @@ class Candidate_id(Action):
 
     def run(self,dispatcher,tracker,domain):
         sim = Similarity(tracker.get_slot("question"))
-        print("actions",sim)
+        # print("actions",sim)
         if sim != -1:
             UpdateSimilarity(sim,tracker.get_slot("cid"))
