@@ -165,11 +165,23 @@ nlu:
 
 - intent: start_interview
   examples: |
-    - [data]{"entity":"question"}
-    - [One]{"entity":"question"}
-    - [First]{"entity":"question"}
-    - [Seven]{"entity":"question"}
-    - [Sixteen]{"entity":"question"}
+    - [ans data]{"entity":"question"}
+    - [ans One]{"entity":"question"}
+    - [ans First]{"entity":"question"}
+    - [ans Seven]{"entity":"question"}
+    - [ans Sixteen]{"entity":"question"}
+    - [ans Referential integrity constraints require that foreign key values in one table correspond to primary key values in another. If the value of the primary key is changed , that is, updated then value of the foreign key must immediately be changed to match it.]{"entity":"question"}
+    - [ans In the one-to-one relationship, there will be a constraint on EmpNumber as a foreign key in COMPUTER stating that EmpNumber must be unique. To convert the relationship to a one-to-many relationship, just drop this constraint.]{"entity":"question"}
+    - [ans In the one-to-one relationship, there will be a constraint on EmpNumber as a foreign key in COMPUTER stating that EmpNumber must be unique. To convert the relationship to a one-to-many relationship, just drop this constraint.]
+    - [ans Managing database structure, controlling concurrent processing, managing processing rights and responsibilities, developing database security, providing for database recovery, managing the DBMS and maintaining the data repository.]{"entity":"question"}
+    - [ans A foreign key is used to establish relationships among relations in the relational model. A foreign key is a column  appearing in one relation that is  the primary key of another table.]{"entity":"question"}
+    - [ans Entities have attributes. Attributes are properties that describe the entity's characteristics. Entity instances have identifiers. Identifiers are attributes that name, or identify, entity instances.]{"entity":"question"}
+    - [ans 1:1 - a single entity instance of one type is related to a single-entity instance of another type.1:N - a single entity instance of one type is related to many-entity instances of another type. M:N - many-entity instances of one type relate to many-entity instances of another type.]{"entity":"question"}
+    - [ans Total specialization exists when every instance of a supertype must also be an instance of a subtype. Partial specialization exists when every instance of a supertype does not have to be an instance of a subtype.]{"entity":"question"}
+    - [ans A distributed database is a single logical database that is spread across more than one node or locations that are all connected via some communication link.]
+    - [ans Redundancy is controlled, Unauthorised access is restricted, Providing multiple user interfaces, Enforcing integrity constraints, Providing backup and recovery.]
+    - [ans Physical Data Independence: Modification in physical level should not affect the logical level. Logical Data Independence: Modification in logical level should affect the view level.]
+
 
 - intent: play_video
   examples: |
