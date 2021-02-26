@@ -1,12 +1,12 @@
 import random
 
 def Similarity(user_answer):
-	print(user_answer)
-	if user_answer==None:
+	print("eval=",user_answer)
+	if user_answer==None or user_answer == 'start':
 		sim = -1
 	else:
 		sim = random.uniform(0.0,1.1)
-	print(sim)
+	# print(sim)
 	return(sim)
 		
 
