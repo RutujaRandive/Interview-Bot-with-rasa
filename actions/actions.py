@@ -100,6 +100,8 @@ class question(Action):
 
             QuestionHistory(tracker.get_slot("cid"),q[0],q[3],q[4],0.5)
 
+        # print(tracker.latest_message['text'])
+
         return [SlotSet("question", tracker.latest_message['text'])]
 
 class Candidate_id(Action):
@@ -107,7 +109,7 @@ class Candidate_id(Action):
         return "get_sim"
 
     def run(self,dispatcher,tracker,domain):
-        sim = Similarity(tracker.get_slot("question"))
-        # print("actions",sim)
+        # print(tracker.latest_message['text'])
+        sim = Similarity(tracker.latest_message['text'])
         if sim != -1:
             UpdateSimilarity(sim,tracker.get_slot("cid"))
