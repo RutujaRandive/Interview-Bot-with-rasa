@@ -4,10 +4,10 @@ def DataUpdate(name, number, last_name, branch, cgpa, email, lang):
     mydb = mysql.connector.connect(user='root',host='localhost',passwd='rutuja',auth_plugin='mysql_native_password',database='recruitment_bot')
     mycursor = mydb.cursor() 
 
-    if mydb.is_connected():
-        print("DataUpdate")
-    else:
-        print("fail")
+    # if mydb.is_connected():
+    #     print("DataUpdate")
+    # else:
+    #     print("fail")
 
     sql='INSERT INTO candidate_details (name, number, last_name, branch, cgpa, email, lang) VALUES ("{0}","{1}","{2}","{3}","{4}","{5}","{6}");'.format(name, number, last_name, branch, cgpa, email, lang)
     mycursor.execute(sql) 
@@ -17,10 +17,10 @@ def RetrieveCandidateId(email):
     mydb = mysql.connector.connect(user='root',host='localhost',passwd='rutuja',auth_plugin='mysql_native_password',database='recruitment_bot')
     mycursor = mydb.cursor() 
 
-    if mydb.is_connected():
-        print("RetrieveCandidateId")
-    else:
-        print("fail")
+    # if mydb.is_connected():
+    #     print("RetrieveCandidateId")
+    # else:
+    #     print("fail")
 
     sql='select cid from candidate_details where email="{0}";'.format(email)
     mycursor.execute(sql)
@@ -32,10 +32,10 @@ def QuestionHistory(cand_id,qid,level,concept,sim):
     mydb = mysql.connector.connect(user='root',host='localhost',passwd='rutuja',auth_plugin='mysql_native_password',database='recruitment_bot')
     mycursor = mydb.cursor() 
 
-    if mydb.is_connected():
-        print("QuestionHistory")
-    else:
-        print("fail")
+    # if mydb.is_connected():
+    #     print("QuestionHistory")
+    # else:
+    #     print("fail")
 
     sql = 'insert into q_history (cand_id,qid,level,sim,concept) values ("{0}","{1}","{2}","{3}","{4}");'.format(cand_id,qid,level,sim,concept)
     mycursor.execute(sql) 
@@ -45,10 +45,10 @@ def RetrieveQuestion(cand_id):
     mydb = mysql.connector.connect(user='root',host='localhost',passwd='rutuja',auth_plugin='mysql_native_password',database='recruitment_bot')
     mycursor = mydb.cursor() 
     
-    if mydb.is_connected():
-        print("RetrieveQuestion")
-    else:
-        print("fail")
+    # if mydb.is_connected():
+    #     print("RetrieveQuestion")
+    # else:
+    #     print("fail")
 
     sql = 'select * from q_history where cand_id="{0}" order by id desc limit 1;'.format(cand_id)
     mycursor.execute(sql)
@@ -136,7 +136,7 @@ def RetrieveQuestion(cand_id):
             q=random.choice(myresult)
         else:
             q=(1,'stop')
-        print(q)
+        # print(q)
         return (q)
 
 
@@ -144,10 +144,10 @@ def UpdateSimilarity(sim,cand_id):
     mydb = mysql.connector.connect(user='root',host='localhost',passwd='rutuja',auth_plugin='mysql_native_password',database='recruitment_bot')
     mycursor = mydb.cursor() 
 
-    if mydb.is_connected():
-        print("UpdateSimilarity")
-    else:
-        print("fail")
+    # if mydb.is_connected():
+    #     print("UpdateSimilarity")
+    # else:
+    #     print("fail")
 
     # fetching latest question entry
     sql = 'select max(id) from q_history where cand_id="{0}";'.format(cand_id)
